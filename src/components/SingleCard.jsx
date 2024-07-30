@@ -1,13 +1,18 @@
-import './SIngleCard.scss';
+import './SingleCard.scss';
 
-export default function SingleCard({ card, card: { src }, handleChoice }) {
+export default function SingleCard({
+  card,
+  card: { src },
+  handleChoice,
+  flipped
+}) {
   const handleClick = () => {
     handleChoice(card);
   };
 
   return (
     <div className='card'>
-      <div>
+      <div className={flipped ? 'flipped' : ''}>
         <img className='front' src={src} alt='card front' />
         <img
           className='back'
