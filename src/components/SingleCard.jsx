@@ -4,10 +4,13 @@ export default function SingleCard({
   card,
   card: { src },
   handleChoice,
-  flipped
+  flipped,
+  disabled
 }) {
   const handleClick = () => {
-    handleChoice(card);
+    if (!disabled) {
+      handleChoice(card);
+    }
   };
 
   return (
